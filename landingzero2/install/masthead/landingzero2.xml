@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<e107Export version="2.3.0 (git)" timestamp="1603093559" >
+	<database>
+	<dbTable name="masthead">
+		<item>
+			<field name="element_id">1</field>
+			<field name="element_preview">{e_THEME}landingzero2/images/Traffic-blurred2.jpg</field>
+			<field name="element_mode">bgvideowm</field>
+			<field name="element_title">Background video + WM</field>
+			<field name="element_visibility">0</field>
+			<field name="element_image"></field>
+			<field name="element_template">default</field>
+			<field name="element_options">{
+    "fields": {
+        "masthead_heading": "",
+        "masthead_subheading": "",
+        "masthead_subttitle": "",
+        "masthead_intro": "{VIDEOBACKGROUND}",
+        "button_text": "",
+        "button_link": "",
+        "button_text_left": "",
+        "button_link_left": "",
+        "button_text_right": "",
+        "button_link_rigth": "",
+        "image_bg": "",
+        "image_01": "",
+        "image_02": ""
+    }
+}</field>
+		</item>
+		<item>
+			<field name="element_id">2</field>
+			<field name="element_preview">{e_THEME}landingzero2/images/Traffic-blurred2.jpg</field>
+			<field name="element_mode">bgimagewm</field>
+			<field name="element_title">Background image + Welcome message</field>
+			<field name="element_visibility">0</field>
+			<field name="element_image"></field>
+			<field name="element_template">bigimagewm</field>
+			<field name="element_options">{
+    "fields": {
+        "masthead_heading": "",
+        "masthead_subheading": "",
+        "masthead_subttitle": "",
+        "masthead_intro": "{WMESSAGE=force}",
+        "button_text": "",
+        "button_link": "",
+        "button_text_left": "",
+        "button_link_left": "",
+        "button_text_right": "",
+        "button_link_rigth": "",
+        "image_bg": "{e_THEME}landingzero2\/images\/Traffic-blurred2.jpg",
+        "image_01": "",
+        "image_02": ""
+    }
+}</field>
+		</item>
+		<item>
+			<field name="element_id">3</field>
+			<field name="element_preview">{e_THEME}landingzero2/images/Traffic-blurred2.jpg</field>
+			<field name="element_mode">bigimage</field>
+			<field name="element_title">Big image + custom texts</field>
+			<field name="element_visibility">0</field>
+			<field name="element_image"></field>
+			<field name="element_template">bigimage</field>
+			<field name="element_options">{
+    "fields": {
+        "masthead_heading": "Simple, Multi Page Design",
+        "masthead_subheading": "A free landing page theme with not only video background",
+        "masthead_subttitle": "e107 CMS",
+        "masthead_intro": "",
+        "button_text": "",
+        "button_link": "",
+        "button_text_left": "First Button",
+        "button_link_left": "",
+        "button_text_right": "Second Button",
+        "button_link_rigth": "",
+        "image_bg": "{e_THEME}landingzero2\/images\/Traffic-blurred2.jpg",
+        "image_01": "",
+        "image_02": ""
+    }
+}</field>
+		</item>
+	</dbTable>
+	</database>
+</e107Export>
