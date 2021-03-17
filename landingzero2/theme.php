@@ -22,8 +22,6 @@ class theme implements e_theme_render
 			define("CORE_CSS", false);
 			e107::css('theme', 'e107.css');
 
-
-
 			////// Theme meta tags /////////////////////////////////////////////////////////
 			e107::meta('viewport', 'width=device-width, initial-scale=1.0');
 
@@ -46,42 +44,7 @@ class theme implements e_theme_render
 			e107::js("footer-inline", 	"$('.e-tip').tooltip({container: 'body'})"); // activate bootstrap tooltips. 
 
 			$this->getInlineCodes();
-
-			//login page settings		
-			if (e_PAGE == "login.php")
-			{
-				$login_iframe 	 = e107::pref('theme', 'login_iframe', false);
-				$loginbox_width  = e107::pref('theme', 'loginbox_width', false);
-				$loginform_width = e107::pref('theme', 'loginform_width', $loginbox_width);
-
-				if($login_iframe) {
-					define('e_IFRAME', '0');
-				}
-				if($loginbox_width) {
-					$inlinecss = " #login-template { min-width:".$loginbox_width."   } ";
-					e107::css("inline", $inlinecss);
-				}
-				 
-				if($loginform_width) {
-					$inlinecss = " #login-page { width:".$loginform_width."   } ";
-					e107::css("inline", $inlinecss);
-				}
-
-			}
-			//forgotten password
-			if (e_PAGE == "fpw.php")
-			{   
-				$fpw_iframe 	 = e107::pref('theme', 'fpw_iframe', true);
  
-				if($fpw_iframe) {
-					//define('e_IFRAME', '0');
-				}
-				else {
-					define('e_IFRAME', '1');
-				}
-				
-			}
-
 		}
 
 		public function getInlineCodes()

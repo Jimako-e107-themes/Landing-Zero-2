@@ -54,4 +54,7 @@
     height: auto;
 }
  
+.navbar-brand > img {
+    display: inline;
+} 
  

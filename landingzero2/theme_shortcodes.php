@@ -92,7 +92,32 @@ class theme_shortcodes extends e_shortcode
 			$text = file_get_contents($footerpath);     
 			} 
 			return $text;
-		}			
+		}
+		
+		/* {NAVBAR_BRANDING} */
+		public function sc_navbar_branding()
+		{ 
+	
+			$pref = e107::pref('theme', 'branding');
+			switch ($pref)
+			{
+			case 'logo':
+				$brand = '{SITELOGO: h=70}';
+				break;
+			case 'sitenamelogo':
+				$brand = "{SITELOGO: h=50}&nbsp;" . SITENAME;
+				break;
+			case 'sitename':
+			default:
+				$brand = '<i class="ion-ios-analytics-outline"></i>&nbsp;'.SITENAME;
+				break;
+			}
+			$text = '<a class="navbar-brand page-scroll" href="{SITEURL}#first">'. $brand .'</a>';
+
+
+			$text = e107::getParser()->parseTemplate($text);
+			return $text;
+		}
   
   
 		function sc_aboutmodal()
@@ -235,176 +260,8 @@ class theme_shortcodes extends e_shortcode
 	{
 		return "<input type='submit' name='send-contactus' value=\"".LANCONTACT_08."\" class='btn btn-primary btn-block btn-lg' />";	
 	}
-	
-	/*---------------------- user box  ********************************************/
-	// {USERBOX}
-	function sc_userbox($parm = null) 
-	{
-		//return nothing for log in user
-		if(!USERID) {
-			return "";
-		}
-
-		if(!empty($parm['layout']))
-		{
-			$tmpl= $parm['layout'];
-		}
-    
-		e107::includeLan(e_PLUGIN."login_menu/languages/".e_LANGUAGE.".php");
-		require(e_PLUGIN."login_menu/login_menu_shortcodes.php"); // don't use 'require_once'.
-		$userReg = defset('USER_REGISTRATION');
  
-		if($userReg==1)
-		{
-		$userNameLabel = !empty($parm['username']) ? USERNAME : '';
-		
-		$link1 = e107::getParser()->parseTemplate('{LM_USERSETTINGS_HREF}',true,$login_menu_shortcodes);
-		$link2 = e107::getParser()->parseTemplate('{LM_PROFILE_HREF}',true,$login_menu_shortcodes);
-		
-		
-		$links[1] = array( 
-				'link_name'			=> '{USER_AVATAR: w=20&h=20&crop=1}   ',
-				'link_url'			=> '#', // 'news.php?extend.'.$row['news_id'],
-				'link_description'	=> LAN_LOGINMENU_51,
-				'link_button'		=> '',
-				'link_category'		=> '',
-				'link_order'		=> '',
-				'link_parent'		=> 0,
-				'link_open'			=> '',
-				'link_class'		=> 253,
-			'link_sub'      => array()
-				);
-			
-			$links[1]['link_sub'][0] = array(
-				'link_name'			=> LAN_SETTINGS,
-				'link_url'			=> $link1, // 'news.php?extend.'.$row['news_id'],
-				'link_description'	=>  LAN_SETTINGS,
-				'link_button'		=> 'fa-cog.glyph',
-				'link_category'		=> '',
-				'link_order'		=> '',
-				'link_parent'		=> 1,
-				'link_open'			=> '',
-				'link_class'		=> 253
-				);
-			
-			$links[1]['link_sub'][1] = array(
-				'link_name'			=>   LAN_LOGINMENU_13,
-				'link_url'			=> $link2, // 'news.php?extend.'.$row['news_id'],
-				'link_description'	=>  LAN_LOGINMENU_13,
-				'link_button'		=> 'fa-user.glyph',
-				'link_category'		=> '',
-				'link_order'		=> '',
-				'link_parent'		=> 1,
-				'link_open'			=> '',
-				'link_class'		=> 253
-				);        
-			
-			if(ADMIN) 
-			{
-				/* $links[1]['link_sub'][2] = array(
-				'link_name'			=>   '<div class="dropdown-divider"></div>',
-				);  */
-		
-		
-				$links[1]['link_sub'][3] = array(
-				'link_name'			=>   LAN_LOGINMENU_11,
-				'link_url'			=> e_ADMIN_ABS,  
-				'link_description'	=>  LAN_LOGINMENU_11,
-				'link_button'		=> 'fa-cogs.glyph',
-				'link_category'		=> '',
-				'link_order'		=> '',
-				'link_parent'		=> 1,
-				'link_open'			=> '',
-				'link_class'		=> 253
-				); 	
-			} 
-		
-		
-		$links[1]['link_sub'][4] = array(
-				'link_name'			=>   LAN_LOGOUT,
-				'link_url'			=> "index.php?logout", // 'news.php?extend.'.$row['news_id'],
-				'link_description'	=>  LAN_LOGOUT,
-				'link_button'		=> 'fa-sign-out.glyph',
-				'link_category'		=> '',
-				'link_order'		=> '',
-				'link_parent'		=> 1,
-				'link_open'			=> '',
-				'link_class'		=> 253
-				);        
-			
-		}
-    
-		$tmpl 			= vartrue($tmpl, 'main');
-		$template		= e107::getCoreTemplate('navigation', $tmpl);	
-		
-		$text =  e107::getNav()->render($links, $template);
-	
-		return e107::getParser()->parseTemplate($text,true,$login_menu_shortcodes);
  
-    
-  	}
-
-	/*---------------------- member login ********************************************/
-  	// {MEMBER_LOGIN}
-	function sc_member_login($parm = null) 
-	{
-		//return nothing for log in user
-		if(USERID) 
-		{
-		return "";
-		}
-    
-    	if(!empty($parm['layout']))
-		{
-			$tmpl= $parm['layout'];
-		}
-    
-		e107::includeLan(e_PLUGIN."login_menu/languages/".e_LANGUAGE.".php");
-		//require(e_PLUGIN."login_menu/login_menu_shortcodes.php"); // don't use 'require_once'.
-		$userReg = defset('USER_REGISTRATION');
- 
-		if($userReg==1)
-		{    
-	
-			$links[] = array(
-			'link_name'			=> LAN_LOGINMENU_3,
-			'link_url'			=> e_SIGNUP, // 'news.php?extend.'.$row['news_id'],
-			'link_description'	=> LAN_LOGINMENU_3,
-			'link_button'		=> '',
-			'link_category'		=> '',
-			'link_order'		=> '',
-			'link_parent'		=> 0,
-			'link_open'			=> '',
-			'link_class'		=> 252
-			);
-	
-		}
-         
-		if(!empty($userReg)) // value of 1 or 2 = login okay. 
-		{ 
-			$links[] = array(
-			'link_name'			=> LAN_LOGINMENU_51,
-			'link_url'			=> e_LOGIN, // 'news.php?extend.'.$row['news_id'],
-			'link_description'	=> LAN_LOGINMENU_51,
-			'link_button'		=> '',
-			'link_category'		=> '',
-			'link_order'		=> '',
-			'link_parent'		=> 0,
-			'link_open'			=> '',
-			'link_class'		=> 25 
-			);
-		} 
-      
-		$tmpl 			= vartrue($tmpl, 'main');
-		$template		= e107::getCoreTemplate('navigation', $tmpl);	
-		
-		$text =  e107::getNav()->render($links, $template);
-	
-		$text = e107::getParser()->parseTemplate($text, true, $login_menu_shortcodes);
-	
-		return $text;
-  	}
-  
   	/* {THEME_PREF: code=header_width&default=container} */
     /* way how to use theme prefs as shortcodes in HTML layout */
 	function sc_theme_pref($parm) 
