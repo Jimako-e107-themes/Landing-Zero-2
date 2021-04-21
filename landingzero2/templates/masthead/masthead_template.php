@@ -13,6 +13,16 @@ $MASTHEAD_TEMPLATE['default']['element'] = '
 </header>
  ';
  
+$MASTHEAD_TEMPLATE['bgvideowm']['element'] = '
+<header id="first">
+   <div class="header-content">
+        <div class="inner">
+		  {WMESSAGE=force}
+        </div>
+    </div>
+    {MASTHEAD_INTRO}
+</header>
+ '; 
  
 $MASTHEAD_TEMPLATE['bigimage']['element'] = '
 <header id="first"  style="background-image: url({IMAGE_BG}) ">
@@ -39,4 +49,5 @@ $MASTHEAD_TEMPLATE['bigimagewm']['element'] = '
         </div>
     </div>
 </header>';
+
  

@@ -43,7 +43,7 @@ class theme_config implements e_theme_config
 				'label' => LAN_JM_ADMIN_HELP_02,
 				'name' => LAN_JM_ADMIN_HELP_03,
 				'icon' => '<i class="S32 e-comments-32"></i>'),
-			'documentation' => array('url' => 'https://www.e107sk.com/e107-themes/e107-free-themes-for-bootstrap-3-e107-landing-zero-2-theme/?cat.351',
+			'documentation' => array('url' => 'https://www.e107sk.com/themes/landing-zero-2',
 				'label' => LAN_JM_ADMIN_HELP_04,
 				'name' => LAN_JM_ADMIN_HELP_05,
 				'icon' => '<i class="S32 e-info-32"></i>'),
