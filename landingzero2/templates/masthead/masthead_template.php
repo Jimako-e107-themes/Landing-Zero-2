@@ -41,7 +41,7 @@ $MASTHEAD_TEMPLATE['bigimage']['element'] = '
     </header>';
 
 
-$MASTHEAD_TEMPLATE['bigimagewm']['element'] = '
+$MASTHEAD_TEMPLATE['bgimagewm']['element'] = '
 <header class="masthead" style="background-image: url({IMAGE_BG}) ">
 	 <div class="header-content">
         <div class="inner">
