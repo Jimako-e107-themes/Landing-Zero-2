@@ -24,7 +24,7 @@ $MASTHEAD_TEMPLATE['bgvideowm']['element'] = '
 </header>
  '; 
  
-$MASTHEAD_TEMPLATE['bigimage']['element'] = '
+$MASTHEAD_TEMPLATE['bgimage']['element'] = '
 <header id="first"  style="background-image: url({IMAGE_BG}) ">
         <div class="header-content">
             <div class="inner">

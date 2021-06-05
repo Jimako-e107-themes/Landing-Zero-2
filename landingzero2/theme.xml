@@ -62,12 +62,6 @@
 		<pref name='videomobilebackground'></pref>
 		<pref name='videoposter'></pref>
 		<pref name='videourl'></pref>
-		<pref name='login_iframe'></pref>
-		<pref name='login_hide_logo'></pref>
-		<pref name='login_hide_sitename'></pref>
-		<pref name='loginbox_width'></pref>
-		<pref name='loginform_width'></pref>
-		<pref name='fpw_iframe'></pref>	
 		<pref name='header_class'>container-fluid</pref>	
 		<pref name='body_class'>container-fluid</pref>	
 		<pref name='footer_class'>container-fluid</pref>	
