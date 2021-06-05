@@ -41,11 +41,11 @@ $CONTACT_TEMPLATE['info'] = "
 		<div class="contactMenuForm">
                         <div class="col-md-4">
                             <label></label>
-                            {CONTACT_NAME}
+                             {CONTACT_NAME: placeholder='.LANCONTACT_03.'}
                         </div>
                         <div class="col-md-4">
                             <label></label>
-                             {CONTACT_EMAIL}
+                             {CONTACT_EMAIL: placeholder='.LANCONTACT_04.'}
                         </div>
                         <div class="col-md-4">
                             <label></label>
