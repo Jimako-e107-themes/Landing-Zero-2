@@ -71,6 +71,8 @@ class theme_config implements e_theme_config
 			$fields = array(
 				'parent_theme' =>  array('title'=>"Parent theme", 'type'=>'dropdown', 'writeParms'=>array('optArray'=> $parentOpts)),
 				'branding' => array('title'=>LAN_LZ_THEMEPREF_09, 'type'=>'dropdown', 'writeParms'=>array('optArray'=> $brandingOpts)),
+                'fonts_local' => array('title'=>LAN_LZ_THEMEPREF_11_01, 'type'=>'boolean'),
+                'fonts_subset' => array('title'=>LAN_LZ_THEMEPREF_11_02, 'type'=>'boolean'),
 				'extended' => array('title'=>LAN_LZ_THEMEPREF_10, 'type'=>'method', 'data'=> false, 'writeParms'=>array('optArray'=> $brandingOpts)),
 			);
 

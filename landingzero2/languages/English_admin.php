@@ -96,3 +96,6 @@ define("LAN_LZ_THEMEPREF_09_02", "Logo");
 define("LAN_LZ_THEMEPREF_09_03", "Logo &amp; Site Name");
 
 define("LAN_LZ_THEMEPREF_10", "Extended configuration:");
+define("LAN_LZ_THEMEPREF_11", "Fonts:");
+define("LAN_LZ_THEMEPREF_11_01", "Load Fonts Locally:");
+define("LAN_LZ_THEMEPREF_11_02", "Load Latin Extended Subset");

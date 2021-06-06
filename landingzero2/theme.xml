@@ -64,6 +64,8 @@
 		<pref name='videourl'></pref>
 		<pref name='header_class'>container-fluid</pref>	
 		<pref name='body_class'>container-fluid</pref>	
-		<pref name='footer_class'>container-fluid</pref>	
+		<pref name='footer_class'>container-fluid</pref>
+        <pref name='fonts_local'>0</pref>
+        <pref name='fonts_subset'>0</pref>  	
 	</themePrefs>
 </e107Theme>

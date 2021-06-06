@@ -23,30 +23,63 @@ class theme implements e_theme_render
 			e107::css('theme', 'e107.css');
 
 			////// Theme meta tags /////////////////////////////////////////////////////////
-			e107::meta('viewport', 'width=device-width, initial-scale=1.0');
+			$this->set_metas();
 
-		
-			////////////////////////////////////////////////////////////////////////////////
- 
-			e107::js("theme", "js/wow.js", 'jquery');
-			e107::js("theme", "js/scripts.js", 'jquery');
+			/////// Theme css  /////////////////////////////////////////////////////////////
+			$this->register_css();
+
+			/////// Theme js  /////////////////////////////////////////////////////////////
+			$this->register_js();
+
+			/////// Theme fonts ///////////////////////////////////////////////////////////
+            $this->register_fonts();
 			
-			
-			e107::css('url', 'https://fonts.googleapis.com/css?family=Questrial');
-			e107::css('url', 'https://fonts.googleapis.com/css?family=Dancing+Script:700');
-
-			e107::css('theme', 'css/animate.min.css');
-			e107::css('theme', 'css/ionicons.min.css');
-			e107::css('theme', 'css/styles.css'); 
-            e107::css('theme', 'style.css'); 
+			/////// Theme icons ///////////////////////////////////////////////////////////
+            $this->register_icons();            
             
-            
-			e107::js("footer-inline", 	"$('.e-tip').tooltip({container: 'body'})"); // activate bootstrap tooltips. 
-
 			$this->getInlineCodes();
  
 		}
 
+		public function set_metas() {
+			e107::meta("viewport", "width=device-width, initial-scale=1.0");
+		}
+
+		public function register_css() {
+    
+			e107::css('theme', 'css/animate.min.css');
+			e107::css('theme', 'css/styles.css'); 
+            e107::css('theme', 'style.css'); 
+	  
+		}
+		
+		public function register_js() {
+			e107::js("theme", "js/wow.js", 'jquery');
+			e107::js("theme", "js/scripts.js", 'jquery');	
+			e107::js("footer-inline", 	"$('.e-tip').tooltip({container: 'body'})"); // activate bootstrap tooltips. 	
+		}
+		
+		public function register_fonts() {
+			$fonts_local = e107::pref('theme', 'fonts_local', FALSE);
+            $fonts_subset = e107::pref('theme', 'fonts_subset', FALSE);
+ 
+            if($fonts_local) {
+                 e107::css('theme', 'fonts/fonts.css');
+                 if($fonts_subset) {
+                    e107::css('theme', 'fonts/fonts_ext.css');
+                 }  
+            }           
+            else {
+            	 e107::css('url', 'https://fonts.googleapis.com/css?family=Questrial');
+			     e107::css('url', 'https://fonts.googleapis.com/css?family=Dancing+Script:700');
+            }		
+		}
+        
+        
+		public function register_icons() {
+             e107::css('theme', 'icons/ionicons.min.css');
+		}
+        
 		public function getInlineCodes()
 		{
 			$inlinecss = e107::pref('theme', 'custom_css', FALSE);
@@ -226,8 +259,6 @@ class theme implements e_theme_render
 		}
 	
 		echo $text;
-	
-	
 						
 		return;
 		
