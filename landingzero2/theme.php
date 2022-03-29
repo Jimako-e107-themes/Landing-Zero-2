@@ -77,7 +77,7 @@ class theme implements e_theme_render
         
         
 		public function register_icons() {
-             e107::css('theme', 'icons/ionicons.min.css');
+             e107::css('theme', 'css/ionicons.min.css');
 		}
         
 		public function getInlineCodes()
