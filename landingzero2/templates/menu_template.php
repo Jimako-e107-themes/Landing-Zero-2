@@ -32,7 +32,7 @@
 						</p>               
         		<p class="text-center">{CPAGEBUTTON}</p>
         		<br/>
-        		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">'.LAN_LZ_THEME_00.' </button>
+        		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">{LAN=LAN_LZ_THEME_00}</button>
         	</div>';
 	$MENU_TEMPLATE['aboutmodal']['end'] 				= '        
 					</div>
