@@ -6,25 +6,6 @@ if (!defined('e107_INIT'))
 }
 
 $sitetheme = e107::getPref('sitetheme');
- 
-
-//TODO MOVE to separate option
-if (isset($_POST['importThemeDemo']))
-{
-	$xmlArray = array();
-	e107::getDebug()->log("Retrieving demo data from xml file");
-	$themepath = e_THEME . $sitetheme . "/install/install.xml";
-	$xmlArray = e107::getSingleton('xmlClass')->loadXMLfile($themepath);
-	$ret = e107::getSingleton('xmlClass')->e107Import($xmlArray);
-	if ($ret)
-	{
-		$mes = e107::getMessage();
-		$mes->add("Importing Theme Demo Content:", E_MESSAGE_SUCCESS);
-	}
-
-	$mes->render();
-}
-
 
 class theme_config implements e_theme_config
 {
@@ -39,26 +20,14 @@ class theme_config implements e_theme_config
 
 		$this->helpLinks =
 		array(
-			'support' => array('url' => 'https://www.e107sk.com/forum/themes-in-active-mode/',
+			'support' => array('url' => 'https://www.e107sk.com/forum/landing-zero-2/',
 				'label' => LAN_JM_ADMIN_HELP_02,
 				'name' => LAN_JM_ADMIN_HELP_03,
 				'icon' => '<i class="S32 e-comments-32"></i>'),
-			'documentation' => array('url' => 'https://www.e107sk.com/themes/landing-zero-2',
-				'label' => LAN_JM_ADMIN_HELP_04,
-				'name' => LAN_JM_ADMIN_HELP_05,
-				'icon' => '<i class="S32 e-info-32"></i>'),
-			'demo' => array('url' => 'https://www.e107sk.com/bootstrap/landingzero/',
-				'label' => LAN_JM_ADMIN_HELP_06,
-				'name' => LAN_JM_ADMIN_HELP_07,
-				'icon' => '<i class="S32 e-fileinspector-32"></i>'),
-			'github' => array('url' => 'https://github.com/e107-themes',
+			'github' => array('url' => 'https://github.com/Jimako-e107-themes/Landing-Zero-2-version-1.5',
 				'label' => LAN_JM_ADMIN_HELP_08,
 				'name' => LAN_JM_ADMIN_HELP_09,
-				'icon' => '<i class="fa fa-3x fa-github"></i>'),
-			'download' => array('url' => 'https://www.e107sk.com/easystore/landing-zero-2-theme/',
-				'label' => LAN_JM_ADMIN_HELP_10,
-				'name' => LAN_JM_ADMIN_HELP_11,
-				'icon' => '<i class="S32 e-downloads-32"></i>'),
+				'icon' => '<i class="fa fa-3x fa-github"></i>')
 		);
 
 	}
@@ -115,11 +84,6 @@ class theme_config implements e_theme_config
 
 		$text = '<style>a.core-mainpanel-link-icon { height: 100px; }</style>';
 
-		$text .= "<div class='panel-body'>
-		        <form method='post' action='" . e_SELF . "?" . e_QUERY . "' id='core-db-import-form'>";
-		$text .= e107::getForm()->admin_button('importThemeDemo', 'Install Demo', 'other');
-		$text .= '</form></div>';
-
 		$mainPanel .= $text;
 		$mainPanel .= "</div>";
 
@@ -148,17 +112,7 @@ class theme_config_form extends e_form  {
 		$mainPanel = " <style>a.core-mainpanel-link-icon { height: 100px; }</style>";
 		$mainPanel .= " ";
 		$mainPanel .= $buttons;
-		$mainPanel .= "  ";
- 
-	 /*
 
-		$text .= "<div class='panel-body'>
-		        <form method='post' action='" . e_SELF . "?" . e_QUERY . "' id='core-db-import-form'>";
-		$text .= e107::getForm()->admin_button('importThemeDemo', 'Install Demo', 'other');
-		$text .= '</form></div>';
-
-		$mainPanel .= $text; */
-		$mainPanel .= " ";
 
 		return $mainPanel;
 	}
