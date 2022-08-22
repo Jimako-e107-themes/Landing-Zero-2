@@ -43,27 +43,33 @@ class themeoptions_ui extends e_admin_ui
 	protected $table = NULL;
 	protected $fieldpref = array();
 	protected $prefs = array();
-	protected $tabs = array('0'=> LAN_JM_THEMEOPTIONS_03, '1'=> LAN_JM_THEMEOPTIONS_07, );
+	protected $tabs = array('0' => LAN_JM_THEMEOPTIONS_03, '1' => LAN_JM_THEMEOPTIONS_07,);
 
 	protected $fields = array(
 
-		'pref_login_iframe' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_03_01 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_01_HELP . '</small>',
+		'pref_login_iframe' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_03_01 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_01_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_hide_logo' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_03_02 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_02_HELP . '</small>',
+		'pref_hide_logo' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_03_02 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_02_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_hide_sitename' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_03_03 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_03_HELP . '</small>',
+		'pref_hide_sitename' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_03_03 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_03_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_loginbox_width' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_03_04  . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_04_HELP . '</small>',
+		'pref_loginbox_width' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_03_04  . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_04_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_loginform_width' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_03_05  . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_05_HELP . '</small>',
-		'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
+		'pref_loginform_width' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_03_05  . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_03_05_HELP . '</small>',
+			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_fpw_iframe' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_07_01 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_07_01_HELP . '</small>',
-		'tab' => 1, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
+		'pref_fpw_iframe' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_07_01 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_07_01_HELP . '</small>',
+			'tab' => 1, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
 	);
 
@@ -72,7 +78,6 @@ class themeoptions_ui extends e_admin_ui
 	public function init()
 	{
 		$this->setDefaultAction('edit');
-
 	}
 
 	public function beforeCreate($new_data, $old_data)
@@ -99,7 +104,6 @@ class themeoptions_ui extends e_admin_ui
 		$new_data['login_iframe'] = '';
 		return false;
 	}
-
 }
 
 class themeoptions_form_ui extends e_admin_form_ui
@@ -113,18 +117,18 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'login_iframe';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'login_iframe';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 
@@ -135,18 +139,18 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'login_hide_logo';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'login_hide_logo';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 
@@ -157,18 +161,18 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'login_hide_sitename';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'login_hide_sitename';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 
@@ -179,18 +183,18 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'loginbox_width';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'text', 'data' => 'str', 'width' => 'auto');
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'loginbox_width';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array('type' => 'text', 'data' => 'str', 'width' => 'auto');
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 
@@ -201,21 +205,21 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'loginform_width';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'text', 'data' => 'str', 'width' => 'auto');
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'loginform_width';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array('type' => 'text', 'data' => 'str', 'width' => 'auto');
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
-	
+
 	public function pref_fpw_iframe($curVal, $mode)
 	{
 
@@ -224,21 +228,20 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'fpw_iframe';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'fpw_iframe';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array('type' => 'boolean', 'data' => 'int', 'width' => 'auto');
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
-
 }
 
 require_once "admin_leftmenu.php";

@@ -43,20 +43,23 @@ class themeoptions_ui extends e_admin_ui
 	protected $table = NULL;
 	protected $fieldpref = array();
 	protected $prefs = array();
-	protected $tabs = array('0'=> LAN_JM_THEMEOPTIONS_06 );
+	protected $tabs = array('0' => LAN_JM_THEMEOPTIONS_06);
 
 	protected $fields = array(
 
-		'pref_header_class' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_06_01 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_06_01_HELP . '</small>',
+		'pref_header_class' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_06_01 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_06_01_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_body_class' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_06_02 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_06_02_HELP . '</small>',
+		'pref_body_class' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_06_02 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_06_02_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-		'pref_footer_class' => array('title' => "<b>" . LAN_JM_THEMEOPTIONS_06_03 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_06_03_HELP . '</small>',
+		'pref_footer_class' => array(
+			'title' => "<b>" . LAN_JM_THEMEOPTIONS_06_03 . '</b><br /><small>' . LAN_JM_THEMEOPTIONS_06_03_HELP . '</small>',
 			'tab' => 0, 'type' => 'method', 'data' => false, 'help' => '', 'writeParms' => array('size' => 'block-level'),
 		),
-	 
+
 	);
 
 	protected $afterSubmitOptions = array('edit');
@@ -64,7 +67,6 @@ class themeoptions_ui extends e_admin_ui
 	public function init()
 	{
 		$this->setDefaultAction('edit');
-
 	}
 
 	public function beforeCreate($new_data, $old_data)
@@ -88,7 +90,6 @@ class themeoptions_ui extends e_admin_ui
 		$new_data['header_class'] = '';
 		return false;
 	}
-
 }
 
 class themeoptions_form_ui extends e_admin_form_ui
@@ -102,19 +103,21 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'header_class';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 
-			'writeParms' => array( 'optArray'=>array('container-fluid'=>LAN_LZ_THEMEPREF_07, 'container'=>LAN_LZ_THEMEPREF_08 )));
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'header_class';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array(
+					'type' => 'dropdown', 'data' => 'str', 'width' => 'auto',
+					'writeParms' => array('optArray' => array('container-fluid' => LAN_LZ_THEMEPREF_07, 'container' => LAN_LZ_THEMEPREF_08))
+				);
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 
@@ -125,19 +128,21 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'body_class';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 
-			'writeParms' => array( 'optArray'=>array('container-fluid'=>LAN_LZ_THEMEPREF_07, 'container'=>LAN_LZ_THEMEPREF_08 )));
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'body_class';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array(
+					'type' => 'dropdown', 'data' => 'str', 'width' => 'auto',
+					'writeParms' => array('optArray' => array('container-fluid' => LAN_LZ_THEMEPREF_07, 'container' => LAN_LZ_THEMEPREF_08))
+				);
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 
@@ -148,19 +153,21 @@ class themeoptions_form_ui extends e_admin_form_ui
 
 		switch ($mode)
 		{
-		case 'read': // Edit Page
-			$text = "Are you cheating?";
-			return $text;
-			break;
+			case 'read': // Edit Page
+				$text = "Are you cheating?";
+				return $text;
+				break;
 
-		case 'write': // Edit Page
-			$name = 'footer_class';
-			$value = $custom_theme_prefs[$name];
-			$attributes = array('type' => 'dropdown', 'data' => 'str', 'width' => 'auto', 
-			'writeParms' => array( 'optArray'=>array('container-fluid'=>LAN_LZ_THEMEPREF_07, 'container'=>LAN_LZ_THEMEPREF_08 )));
-			$text = $this->renderElement($name, $value, $attributes);
-			return $text;
-			break;
+			case 'write': // Edit Page
+				$name = 'footer_class';
+				$value = $custom_theme_prefs[$name];
+				$attributes = array(
+					'type' => 'dropdown', 'data' => 'str', 'width' => 'auto',
+					'writeParms' => array('optArray' => array('container-fluid' => LAN_LZ_THEMEPREF_07, 'container' => LAN_LZ_THEMEPREF_08))
+				);
+				$text = $this->renderElement($name, $value, $attributes);
+				return $text;
+				break;
 		}
 	}
 }
