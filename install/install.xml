@@ -156,7 +156,7 @@
 		<landingzero2 name="videobackground">{e_THEME}landingzero2/images/background02.jpg</landingzero2>
 		<landingzero2 name="videomobilebackground">{e_THEME}landingzero2/images/background02.jpg</landingzero2>
 		<landingzero2 name="videoposter">{e_THEME}landingzero2/images/background02.jpg</landingzero2>
-		<landingzero2 name="videourl">https://storage.googleapis.com/coverr-main/mp4/Traffic-blurred2.mp4</landingzero2>
+		<landingzero2 name="videourl">https://images.all-free-download.com/footage_preview/mp4/bokeh_clip_of_traffic_style_in_urban_6891851.mp4</landingzero2>
 	</themePrefs>
 	<database> 	
   <dbTable name="generic">

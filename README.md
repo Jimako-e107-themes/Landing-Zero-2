@@ -4,15 +4,15 @@
 
 ## Warning
 
-Minimal e107 version 2.3.2
+Minimal e107 version 2.3.3
 
 ## Preview
 
-**[View Live Preview](https://www.e107sk.com/bootstrap/landingzero/)**
+Mot available
 
 ## Status
 
-Released version 1.2
+Maintanance mode
 
 ## Required plugins
  

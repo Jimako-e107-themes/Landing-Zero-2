@@ -80,7 +80,7 @@ class theme_shortcodes extends e_shortcode
 	{
 
 		$theme = e107::getPref('sitetheme');
-		$headerName = varset($this->layout_options['layout_header'], $theme . "/headers/header_default.html");
+		$headerName = varset($this->layoutsOptions['layout_header'], $theme . "/headers/header_default.html");
 		$headerpath = e_THEME . $headerName;
 
 		if (file_exists($headerpath))
@@ -93,7 +93,7 @@ class theme_shortcodes extends e_shortcode
 	function sc_footer($parm)
 	{
 		$theme = e107::getPref('sitetheme');
-		$footerName = varset($this->layout_options['layout_footer'], $theme . "/footers/footer_default.html");
+		$footerName = varset($this->layoutsOptions['layout_footer'], $theme . "/footers/footer_default.html");
 		$footerpath = e_THEME . $footerName;
 
 		if (file_exists($footerpath))
