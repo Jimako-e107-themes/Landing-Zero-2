@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<e107Export version="2.3.0 (git)" timestamp="1603093559" >
+<e107Export version="2.4.0 (git)" timestamp="1749035460" >
 	<database>
 	<dbTable name="masthead">
 		<item>
@@ -35,7 +35,7 @@
 			<field name="element_title">Background image + Welcome message</field>
 			<field name="element_visibility">0</field>
 			<field name="element_image"></field>
-			<field name="element_template">bigimagewm</field>
+			<field name="element_template">bgimagewm</field>
 			<field name="element_options">{
     "fields": {
         "masthead_heading": "",
@@ -61,7 +61,7 @@
 			<field name="element_title">Big image + custom texts</field>
 			<field name="element_visibility">0</field>
 			<field name="element_image"></field>
-			<field name="element_template">bigimage</field>
+			<field name="element_template">bgimage</field>
 			<field name="element_options">{
     "fields": {
         "masthead_heading": "Simple, Multi Page Design",
